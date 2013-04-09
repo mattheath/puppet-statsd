@@ -5,6 +5,8 @@
 #   include statsd::config
 
 class statsd::config {
+  require boxen::config
+
   $configdir  = "${boxen::config::configdir}/statsd"
   $configfile = "${configdir}/config.js"
   $port       = '8125'

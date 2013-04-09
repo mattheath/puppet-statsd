@@ -1,2 +1,9 @@
-mod 'boxen', '0.0.26', :github_tarball => 'boxen/puppet-boxen'
-mod 'stdlib', '3.0.0', :github_tarball => "puppetlabs/puppetlabs-stdlib"
+def github name, version, options = {}
+  options[:repo] ||= "boxen/puppet-#{name}"
+  mod name, version, :github_tarball => options[:repo]
+end
+
+github 'boxen', '0.0.26'
+github 'nodejs', '1.0.0'
+github 'nvm', '1.0.0'
+github 'stdlib', '3.0.0', :repo => 'puppetlabs/puppetlabs-stdlib'
