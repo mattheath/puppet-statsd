@@ -1,6 +1,6 @@
 {
-  'port': <%= port %>,
-  'graphitePort': <%= graphitePort %>,
-  'graphiteAddress': <%= graphiteAddress %>,
-  'flushInterval': 10000
+  "port": <%= scope.lookupvar "statsd::config::port" %>,
+  "graphitePort": <%= scope.lookupvar "statsd::config::graphitePort" %>,
+  "graphiteAddress": "<%= scope.lookupvar "statsd::config::graphiteAddress" %>",
+  "flushInterval": 10000
 }

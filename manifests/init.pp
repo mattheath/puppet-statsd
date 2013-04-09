@@ -1,3 +1,8 @@
+# Public: Installs statsd via npm, configures for graphite backend
+#
+# Examples
+#
+#   include statsd
 class statsd {
   include statsd::service
   include statsd::config
