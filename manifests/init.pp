@@ -6,10 +6,12 @@
 class statsd {
   include statsd::service
   include statsd::config
-  include nvm
-  include nodejs::0-8
 
   file { $statsd::config::configdir:
+    ensure => 'directory'
+  }
+
+  file { $statsd::config::logdir:
     ensure => 'directory'
   }
 
@@ -17,8 +19,8 @@ class statsd {
     content => template('statsd/config.js.erb')
   }
 
-  package { 'statsd':
-    ensure   => 'latest',
-    provider => 'npm'
+  repository { $statsd::config::libdir:
+    provider  => 'git',
+    source    => 'etsy/statsd'
   }
 }

@@ -10,4 +10,7 @@ class statsd::config {
   $configdir  = "${boxen::config::configdir}/statsd"
   $configfile = "${configdir}/config.js"
   $port       = '8125'
+  $libdir     = "${boxen::config::datadir}/statsd"
+  $logdir     = "${boxen::config::logdir}/statsd"
+  $executable = "${libdir}/bin/statsd"
 }

@@ -4,7 +4,21 @@
 #
 #   include statsd::service
 class statsd::service {
-  service { 'statsd':
-    ensure    => 'running',
+  include statsd::config
+
+  file { '/Library/LaunchDaemons/dev.statsd.plist':
+    content => template('statsd/dev.statsd.plist.erb'),
+    owner   => 'root',
+    group   => 'wheel',
+    notify  => Service['dev.statsd']
+  }
+
+  service { 'dev.statsd':
+    ensure    => running
+  }
+
+  service { 'com.boxen.statsd':
+    before  => Service['dev.statsd'],
+    enable  => true
   }
 }
