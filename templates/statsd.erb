@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+source <%= scope.lookupvar "boxen::config::home" %>/env.sh
+node <%= scope.lookupvar "statsd::config::libdir" %>/stats.js <%= scope.lookupvar "statsd::config::configfile" %>

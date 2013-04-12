@@ -13,12 +13,17 @@ class statsd::service {
     notify  => Service['dev.statsd']
   }
 
+  file { $statsd::config::executable:
+    content => template('statsd/statsd.erb'),
+    mode    => 0755
+  }
+
   service { 'dev.statsd':
     ensure    => running
   }
 
   service { 'com.boxen.statsd':
     before  => Service['dev.statsd'],
-    enable  => true
+    enable  => false
   }
 }

@@ -12,5 +12,5 @@ class statsd::config {
   $port       = '8125'
   $libdir     = "${boxen::config::datadir}/statsd"
   $logdir     = "${boxen::config::logdir}/statsd"
-  $executable = "${libdir}/bin/statsd"
+  $executable = "${boxen::config::home}/bin/statsd"
 }
