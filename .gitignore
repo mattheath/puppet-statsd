@@ -5,3 +5,6 @@
 /spec/fixtures/Puppetfile.lock
 /spec/fixtures/modules/boxen/
 /spec/fixtures/vendor
+/spec/fixtures/modules/nodejs/
+/spec/fixtures/modules/nvm/
+/spec/fixtures/modules/stdlib/
