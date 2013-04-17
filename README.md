@@ -1,5 +1,8 @@
 # puppet-statsd
 
+[![Build
+Status](https://travis-ci.org/boxen/puppet-statsd.png?branch=master)](https://travis-ci.org/boxen/puppet-statsd)
+
 Puppet module for statsd configuration, designed for boxen
 
 ## Usage
