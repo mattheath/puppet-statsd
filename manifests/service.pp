@@ -15,7 +15,7 @@ class statsd::service {
 
   file { $statsd::config::executable:
     content => template('statsd/statsd.erb'),
-    mode    => 0755
+    mode    => '0755'
   }
 
   service { 'dev.statsd':

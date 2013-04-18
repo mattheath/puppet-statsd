@@ -6,4 +6,3 @@ end
 github 'boxen', '0.0.26'
 github 'nodejs', '1.0.0'
 github 'nvm', '1.0.0'
-github 'stdlib', '3.0.0', :repo => 'puppetlabs/puppetlabs-stdlib'
