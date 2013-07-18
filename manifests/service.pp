@@ -10,7 +10,10 @@ class statsd::service {
     content => template('statsd/dev.statsd.plist.erb'),
     owner   => 'root',
     group   => 'wheel',
-    notify  => Service['dev.statsd']
+    notify  => Service['dev.statsd'],
+    require => [
+      File[$statsd::config::executable],
+    ]
   }
 
   file { $statsd::config::executable:
