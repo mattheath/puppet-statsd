@@ -14,21 +14,21 @@ class statsd::service {
     require => [
       File[$statsd::config::logdir],
       Repository[$statsd::config::libdir],
-    ]
+    ],
   }
 
   file { $statsd::config::executable:
     content => template('statsd/statsd.erb'),
-    mode    => '0755'
+    mode    => '0755',
     notify  => Service['dev.statsd'],
   }
 
   service { 'dev.statsd':
-    ensure  => running
+    ensure  => running,
   }
 
   service { 'com.boxen.statsd':
     before  => Service['dev.statsd'],
-    enable  => false
+    enable  => false,
   }
 }
