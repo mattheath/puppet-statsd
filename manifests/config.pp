@@ -13,4 +13,9 @@ class statsd::config {
   $libdir     = "${boxen::config::datadir}/statsd"
   $logdir     = "${boxen::config::logdir}/statsd"
   $executable = "${boxen::config::home}/bin/statsd"
+
+  # Set graphite options
+  $graphitePort = '12003'
+  $graphiteHost = 'localhost'
+
 }
