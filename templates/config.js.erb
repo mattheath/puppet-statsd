@@ -2,7 +2,7 @@
   "port": <%= scope.lookupvar "statsd::config::port" %>,
 <% if scope.lookupvar "statsd::config::graphitePort" %>
   "graphitePort": <%= scope.lookupvar "statsd::config::graphitePort" %>,
-  "graphiteAddress": "<%= scope.lookupvar "statsd::config::graphiteAddress" %>",
+  "graphiteHost": "<%= scope.lookupvar "statsd::config::graphiteHost" %>",
 <% end %>
   "flushInterval": 10000
 }
